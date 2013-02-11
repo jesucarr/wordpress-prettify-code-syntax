@@ -1,10 +1,10 @@
-<?php $options = get_option('markup_highlighter'); ?>
+<?php $options = get_option('prettify_code_syntax'); ?>
 <fieldset><legend class="screen-reader-text"><span><?php _e('Style', $this->plugin_id) ?></span></legend>
 	<table>
 		<tr>
 			<td>
 				<label for="mh-style-default">
-					<input id="mh-style-default" type="radio" name="markup_highlighter[style]" value="default" <?php if ($options['style'] == 'default' || !$options['style']) { echo 'checked="checked"'; } ?> />
+					<input id="mh-style-default" type="radio" name="prettify_code_syntax[style]" value="default" <?php if ($options['style'] == 'default' || !$options['style']) { echo 'checked="checked"'; } ?> />
 					<?php _e('Default', $this->plugin_id) ?>
 				</label>
 			</td>
@@ -17,7 +17,7 @@
 		<tr>
 			<td>
 				<label for="mh-style-desert">
-					<input id="mh-style-desert" type="radio" name="markup_highlighter[style]" value="desert" <?php if ($options['style'] == 'desert') { echo 'checked="checked"'; } ?> />
+					<input id="mh-style-desert" type="radio" name="prettify_code_syntax[style]" value="desert" <?php if ($options['style'] == 'desert') { echo 'checked="checked"'; } ?> />
 					Desert
 				</label>
 			</td>
@@ -30,7 +30,7 @@
 		<tr>
 			<td>
 				<label for="mh-style-sunburst">
-					<input id="mh-style-sunburst" type="radio" name="markup_highlighter[style]" value="sunburst" <?php if ($options['style'] == 'sunburst') { echo 'checked="checked"'; } ?> />
+					<input id="mh-style-sunburst" type="radio" name="prettify_code_syntax[style]" value="sunburst" <?php if ($options['style'] == 'sunburst') { echo 'checked="checked"'; } ?> />
 					Sunburst
 				</label>
 			</td>
@@ -43,7 +43,7 @@
 		<tr>
 			<td>
 				<label for="mh-style-sons-of-obsidian">
-					<input id="mh-style-sons-of-obsidian" type="radio" name="markup_highlighter[style]" value="sons_of_obsidian" <?php if ($options['style'] == 'sons_of_obsidian') { echo 'checked="checked"'; } ?> />
+					<input id="mh-style-sons-of-obsidian" type="radio" name="prettify_code_syntax[style]" value="sons_of_obsidian" <?php if ($options['style'] == 'sons_of_obsidian') { echo 'checked="checked"'; } ?> />
 					Sons of Obsidian
 				</label>
 			</td>
@@ -56,13 +56,13 @@
 		<tr>
 			<td>
 				<label for="mh-style-custom">
-					<input id="mh-style-custom" type="radio" name="markup_highlighter[style]" value="custom" <?php if ($options['style'] == 'custom') { echo 'checked="checked"'; } ?> />
+					<input id="mh-style-custom" type="radio" name="prettify_code_syntax[style]" value="custom" <?php if ($options['style'] == 'custom') { echo 'checked="checked"'; } ?> />
 					<?php _e('Custom', $this->plugin_id) ?>
 				</label>
 			</td>
 			<td>
 				<label for="mh-style-custom">
-					<textarea cols="90" rows="30" name="markup_highlighter[style_custom]">
+					<textarea cols="90" rows="30" name="prettify_code_syntax[style_custom]">
 <?php 
 if(!empty($options['style_custom'])): 
 echo $options['style_custom']; 
