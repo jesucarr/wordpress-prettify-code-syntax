@@ -1,5 +1,5 @@
 <?php 
 if(defined('WP_UNINSTALL_PLUGIN')) {  
-  delete_option("markup_highlighter");
+  delete_option("prettify_code_syntax");
 }  
 ?>
