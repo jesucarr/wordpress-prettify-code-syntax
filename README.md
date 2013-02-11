@@ -1,2 +1,0 @@
-wordpress-markup-highlighter
-============================
