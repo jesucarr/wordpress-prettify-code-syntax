@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Markup Highlighter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-11 11:47+0100\n"
+"PO-Revision-Date: 2013-02-11 11:47+0100\n"
+"Last-Translator: Jesús Carrera <hola@jesuscarrera.com>\n"
+"Language-Team: Jesús Carrera <jesus.carrera@frontendmatters.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: United Kingdom\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../markup-highlighter.php:39
+msgid "Markup Highlighter Options"
+msgstr ""
+
+#: ../markup-highlighter.php:39
+#: ../views/options.php:3
+msgid "Markup Highlighter"
+msgstr ""
+
+#: ../markup-highlighter.php:44
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: ../markup-highlighter.php:52
+msgid "Languages"
+msgstr ""
+
+#: ../markup-highlighter.php:53
+#: ../views/languages-extra-languages-field-content.php:2
+msgid "Extra Languages"
+msgstr ""
+
+#: ../markup-highlighter.php:55
+#: ../markup-highlighter.php:56
+#: ../views/style-style-field-content.php:2
+msgid "Style"
+msgstr ""
+
+#: ../views/languages-section-description.php:1
+msgid "This syntax highlighter is based on <a href=\"http://google-code-prettify.googlecode.com/svn/trunk/README.html\" target=\"_blank\">Google Code Prettify</a> and should work on a number of languages including <strong>C</strong> and friends, <strong>Java</strong>, <strong>Python</strong>, <strong>Bash</strong>, <strong>SQL</strong>, <strong>HTML</strong>, <strong>XML</strong>, <strong>Javascript</strong>, and <strong>Makefiles</strong>. It works passably on <strong>Ruby</strong>, <strong>PHP</strong>, <strong>VB</strong>, and <strong>Awk</strong> and a decent subset of <strong>Perl</strong> and <strong>Ruby</strong>, but, because of commenting conventions, doesn't work on Smalltalk, or CAML-like languages."
+msgstr ""
+
+#: ../views/languages-section-description.php:2
+msgid "Other languages are supported via an extension:"
+msgstr ""
+
+#: ../views/style-section-description.php:1
+msgid "Choose your preferred style, or create a new one"
+msgstr ""
+
+#: ../views/style-style-field-content.php:8
+msgid "Default"
+msgstr ""
+
+#: ../views/style-style-field-content.php:60
+msgid "Custom"
+msgstr ""
+

@@ -33,6 +33,7 @@ class MarkupHighlighter {
 		$this->plugin_url = plugins_url($this->plugin_id);
   	add_action('admin_menu', array($this, 'menu'));
 		add_action('admin_init', array($this, 'register_settings'));
+		add_action('plugins_loaded', array($this, 'load_plugin_textdomain'));
   }
 
   public function menu() {
@@ -82,6 +83,11 @@ class MarkupHighlighter {
 	public function style_style_field_content() {
 		include "views/style-style-field-content.php";
 	}
+
+	public function load_plugin_textdomain() {
+  	load_plugin_textdomain($this->plugin_id, FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+  }
+
 }
 
 new MarkupHighlighter();
