@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Prettify Code Syntax 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-11 11:47+0100\n"
-"PO-Revision-Date: 2013-02-11 14:34+0100\n"
+"POT-Creation-Date: 2013-02-12 19:22+0100\n"
+"PO-Revision-Date: 2013-02-12 19:22+0100\n"
 "Last-Translator: Jesús Carrera <hola@jesuscarrera.com>\n"
 "Language-Team: Jesús Carrera <jesus.carrera@frontendmatters.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,31 +16,33 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../markup-highlighter.php:39
-msgid "Markup Highlighter Options"
+#: ../prettify-code-syntax.php:50
+msgid "Prettify Code Syntax Options"
 msgstr ""
 
-#: ../markup-highlighter.php:39
+#: ../prettify-code-syntax.php:50
 #: ../views/options.php:3
-msgid "Markup Highlighter"
+msgid "Prettify Code Syntax"
 msgstr ""
 
-#: ../markup-highlighter.php:44
+#: ../prettify-code-syntax.php:55
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../markup-highlighter.php:52
+#: ../prettify-code-syntax.php:63
+#: ../views/options.php:8
 msgid "Languages"
 msgstr ""
 
-#: ../markup-highlighter.php:53
-#: ../views/languages-extra-languages-field-content.php:2
+#: ../prettify-code-syntax.php:64
+#: ../views/languages-extra-languages-field-content.php:1
 msgid "Extra Languages"
 msgstr ""
 
-#: ../markup-highlighter.php:55
-#: ../markup-highlighter.php:56
-#: ../views/style-style-field-content.php:2
+#: ../prettify-code-syntax.php:66
+#: ../prettify-code-syntax.php:67
+#: ../views/options.php:9
+#: ../views/style-style-field-content.php:1
 msgid "Style"
 msgstr ""
 
@@ -56,11 +58,11 @@ msgstr ""
 msgid "Choose your preferred style, or create a new one"
 msgstr ""
 
-#: ../views/style-style-field-content.php:8
+#: ../views/style-style-field-content.php:7
 msgid "Default"
 msgstr ""
 
-#: ../views/style-style-field-content.php:60
+#: ../views/style-style-field-content.php:59
 msgid "Custom"
 msgstr ""
 
