@@ -66,7 +66,7 @@
 if(!empty($this->options['style_custom'])) {
 	echo $this->options['style_custom']; 
 } else {
-	include(dirname(dirname(__FILE__)).'/stylesheets/custom.css');
+	include(dirname(dirname(__FILE__)).'/stylesheets/sunburst.css');
 }
 ?>
 					</textarea>
