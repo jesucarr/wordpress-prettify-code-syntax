@@ -1,7 +1,7 @@
 === Prettify Code Syntax ===
 Contributors: jesucarr
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEJAVTJUGWE3E
-Tags: comments, spam
+Tags: syntax, highlighter, prettify, code, markup
 Requires at least: 3.0.1
 Tested up to: 3.5.1
 Stable tag: 1.0
@@ -12,103 +12,63 @@ Code syntax highlighter using Google Prettify, supporting the HTML5 recommendati
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+The main reason for the development of this plugin was the lack of options supporting the **HTML5 recommendation**, where the code snippets should be tagged with `pre` followed by `code`, and optionally a class starting with `language-` and then our language.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+You can use the plugin like this:
 
-A few notes about the sections above:
+`<pre class="prettify"><code class="language-php">
+// my code
+</code></pre>`
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+Also very important is that although this plugin loads different files depending on your configuration, it fully **supports caching** scripts ([W3 Total Cache](http://wordpress.org/extend/plugins/w3-total-cache/)) to concatenate and compress all the css and js, so the impact in performance will be minimum.
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+= Languages =
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+This syntax highlighter is based on [Google Code Prettify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) and should work on a number of languages including **C** and friends, **Java**, **Python**, **Bash**, **SQL**, **HTML**, **XML**, **Javascript**, and **Makefiles**. It works passably on **Ruby**, **PHP**, **VB**, and **Awk** and a decent subset of **Perl** and **Ruby**, but, because of commenting conventions, doesn't work on Smalltalk, or CAML-like languages.
+
+Other languages are supported via an extension (plugin options):  **CSS**, **SQL**, **YAML**, **Visual Basic**, **Clojure**, **Scala**, **TeX**, **LaTeX**, **WikiText**, **Erlang**, **Go**, **Haskell**, **Lua**, **OCAML**, **SML**, **F#**, **Nemerle**, **Protocol Buffers**, **VHDL**, **XQuery**
+
+= Styles =
+
+**Four** different styles are provided, and they can be previewed in the plugin options. They are modified to make sure they don't clash with any other styles in your theme.
+
+You have also the option to include your **custom style**.
+
+= Notes =
+
+* Plugin options are at Settings > Prettify Code Syntax. Have a look at the Screenshots tab to see how it looks like.
+
+* If you don't care too much about the HTML5 recommendation, you can skip the `language-` class. The code always gets detected automatically.
+
+* It will also work if you only use a `pre` tag without the `code` tag (but long lines will be wrapped instead of get horizontal scroll), or if you only use a `code` tag with the `prettify` class (but if you don't use `pre` your spaces/returns won't be maintained.)
+
+* Be careful using the Visual Editor tab when inserting code, as some HTML tags will be modified or removed.
+
+* Using a chaching plugin like W3 Total Cache is highly recommended.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+In your Wordpress installation go to Plugins > Add New, and search for "prettify code syntax" to find and install it automatically.
 
-e.g.
+You can also install it manually:
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Download the plugin and upload the contents to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Change settings if neccessary at Settings > Prettify Code Syntax
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= I want to add the tags `</code>` or `</pre>` to my code, how can I do it without breaking the snippet? =
 
-An answer to that question.
+You need to add a space before the closing `>`, like this `</code >`
 
-= What about foo bar? =
-
-Answer to foo bar dilemma.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Language options
+2. Style options
 
 == Changelog ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+* First release
