@@ -34,6 +34,8 @@ Other languages are supported via an extension (plugin options):  **CSS**, **SQL
 
 You have also the option to include your **custom style**.
 
+If you have a style that would like to see included in the option list, just [contact me](http://www.frontendmatters.com/contact/), or [fork me](https://github.com/jesucarr/wordpress-prettify-code-syntax).
+
 = Notes =
 
 * Plugin options are at Settings > Prettify Code Syntax. Have a look at the Screenshots tab to see how it looks like.
@@ -46,13 +48,17 @@ You have also the option to include your **custom style**.
 
 * Using a chaching plugin like W3 Total Cache is highly recommended.
 
+= Demo = 
+
+You can find a [front end demo](http://www.frontendmatters.com/open-source/wordpress-plugins/prettify-code-syntax/) here a the bottom.
+
 == Installation ==
 
 In your Wordpress installation go to Plugins > Add New, and search for "prettify code syntax" to find and install it automatically.
 
 You can also install it manually:
 
-1. Download the plugin and upload the contents to the `/wp-content/plugins/` directory
+1. Download the plugin and upload the contents to the `/wp-content/plugins/` directory, using FTP or the Upload tab in Plugins > Add New.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Change settings if neccessary at Settings > Prettify Code Syntax
 
@@ -60,8 +66,11 @@ You can also install it manually:
 
 = I want to add the tags `</code>` or `</pre>` to my code, how can I do it without breaking the snippet? =
 
-You need to add a space before the closing `>`, like this `</code >`
+You can add a space before the closing `>`, like this `</code >`
 
+= I found a bug, or have some code improvements, or have something to ask about the plugin. How do I contact you? =
+
+Best thing with anything related to code would be to [fork me or open an issue](https://github.com/jesucarr/wordpress-prettify-code-syntax). For anything else you can [post a comment](http://www.frontendmatters.com/open-source/wordpress-plugins/prettify-code-syntax/) or [contact me](http://www.frontendmatters.com/contact/).
 
 == Screenshots ==
 

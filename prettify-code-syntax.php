@@ -163,9 +163,9 @@ class PrettifyCodeSyntax {
 
  		$prettify_code = false;
 
- 		$regex = '/(<pre\s+.*?class\s*?=\s*?[",\'].*?prettyprint\b.*?[",\'].*?>)(.*?)(<\/pre>)/si';
+ 		$regex = '/(<pre\s+[^>]*?class\s*?=\s*?[",\'].*?prettyprint.*?[",\'].*?>)(.*?)(<\/pre>)/si';
  		$content = preg_replace_callback($regex, array($this, 'parse_content_pre'), $content);
- 		$regex = '/(<code\s+[^>]*?class\s*?=\s*?"\s*?prettyprint.*?".*?>)(.*?)(<\/code>)/si';
+ 		$regex = '/(<code\s+[^>]*?class\s*?=\s*?[",\']\s*?prettyprint.*?[",\'].*?>)(.*?)(<\/code>)/si';
  		// print_r($content);
  		$content = preg_replace_callback($regex, array($this, 'parse_content_code'), $content);
 
