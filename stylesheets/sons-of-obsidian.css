@@ -1,118 +1,58 @@
-/*
- * Derived from einaros's Sons of Obsidian theme at
- * http://studiostyl.es/schemes/son-of-obsidian by
- * Alex Ford of CodeTunnel:
- * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme
- */
+/* Based on Alex Ford's Sons of Obsidian http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme */
 
-.str
-{
-    color: #EC7600;
-}
-.kwd
-{
-    color: #93C763;
-}
-.com
-{
-    color: #66747B;
-}
-.typ
-{
-    color: #678CB1;
-}
-.lit
-{
-    color: #FACD22;
-}
-.pun
-{
-    color: #F1F2F3;
-}
-.pln
-{
-    color: #F1F2F3;
-}
-.tag
-{
-    color: #8AC763;
-}
-.atn
-{
-    color: #E0E2E4;
-}
-.atv
-{
-    color: #EC7600;
-}
-.dec
-{
-    color: purple;
-}
-pre.prettyprint
-{
-    border: 0px solid #888;
-}
-ol.linenums
-{
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.prettyprint {
-    background: #000;
-}
-li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
-{
-    color: #555;
-    list-style-type: decimal;
-}
-li.L1, li.L3, li.L5, li.L7, li.L9 {
-    background: #111;
-}
-@media print
-{
-    .str
-    {
-        color: #060;
-    }
-    .kwd
-    {
-        color: #006;
-        font-weight: bold;
-    }
-    .com
-    {
-        color: #600;
-        font-style: italic;
-    }
-    .typ
-    {
-        color: #404;
-        font-weight: bold;
-    }
-    .lit
-    {
-        color: #044;
-    }
-    .pun
-    {
-        color: #440;
-    }
-    .pln
-    {
-        color: #000;
-    }
-    .tag
-    {
-        color: #006;
-        font-weight: bold;
-    }
-    .atn
-    {
-        color: #404;
-    }
-    .atv
-    {
-        color: #060;
-    }
+.prettyprint .str { color: #EC7600;}
+.prettyprint .kwd { color: #93C763;}
+.prettyprint .com { color: #66747B;}
+.prettyprint .typ { color: #678CB1;}
+.prettyprint .lit { color: #FACD22;}
+.prettyprint .pun { color: #F1F2F3;}
+.prettyprint .pln { color: #F1F2F3;}
+.prettyprint .tag { color: #8AC763;}
+.prettyprint .atn { color: #E0E2E4;}
+.prettyprint .atv { color: #EC7600;}
+.prettyprint .dec { color: purple;}
+pre.prettyprint, 
+code.prettyprint, 
+.post-content pre.prettyprint,
+.post-content code.prettyprint,
+.comment-content pre.prettyprint,
+.comment-content code.prettyprint { border: 0px solid #888;}
+.prettyprint ol.linenums { margin-top: 0; margin-bottom: 0;}
+
+pre.prettyprint, 
+code.prettyprint, 
+pre.prettyprint code,
+.post-content pre.prettyprint,
+.post-content code.prettyprint,
+.post-content pre.prettyprint code,
+.comment-content pre.prettyprint,
+.comment-content code.prettyprint,
+.comment-content pre.prettyprint code { background: #000;}
+
+.prettyprint li.L0, 
+.prettyprint li.L1, 
+.prettyprint li.L2, 
+.prettyprint li.L3, 
+.prettyprint li.L4, 
+.prettyprint li.L5, 
+.prettyprint li.L6, 
+.prettyprint li.L7, 
+.prettyprint li.L8, 
+.prettyprint li.L9 { color: #555; list-style-type: decimal;}
+.prettyprint li.L1, 
+.prettyprint li.L3, 
+.prettyprint li.L5, 
+.prettyprint li.L7, 
+.prettyprint li.L9 { background: #111;}
+@media print {
+    .prettyprint .str { color: #060;}
+    .prettyprint .kwd { color: #006; font-weight: bold;}
+    .prettyprint .com { color: #600; font-style: italic;}
+    .prettyprint .typ { color: #404; font-weight: bold;}
+    .prettyprint .lit { color: #044;}
+    .prettyprint .pun { color: #440;}
+    .prettyprint .pln { color: #000;}
+    .prettyprint .tag { color: #006; font-weight: bold;}
+    .prettyprint .atn { color: #404;}
+    .prettyprint .atv { color: #060;}
 }
