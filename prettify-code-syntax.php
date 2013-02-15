@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Prettify Code Syntax
-Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
-Description: A brief description of the Plugin.
+Plugin URI: http://www.frontendmatters.com/open-source/wordpress-plugins/prettify-code-syntax/
+Description: Code syntax highlighter using Google Prettify, supporting the HTML5 recommendation, and caching plugins.
 Version: 1.0
 Author: Jesús Carrera
-Author URI: http://URI_Of_The_Plugin_Author
+Author URI: http://www.frontendmatters.com/
 License: GPL2 or later
 */
 /*  Copyright 2013  Jesús Carrera  (email : jesus.carrera@frontendmatters.com)
