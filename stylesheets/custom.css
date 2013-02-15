@@ -1,6 +1,6 @@
 /* Based on Vim sunburst theme by David Leibovic */
 
-.prettyprint .str { color: #65B042; } /* string  - green */
+.prettyprint .str { color: #65B043; } /* string  - green */
 .prettyprint .kwd { color: #E28964; } /* keyword - dark pink */
 .prettyprint .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
 .prettyprint .typ { color: #89bdff; } /* type - light blue */
@@ -75,3 +75,4 @@ pre.prettyprint {
   .prettyprint .atn { color: #404; }
   .prettyprint .atv { color: #060; }
 }
+										

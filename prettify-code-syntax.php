@@ -67,14 +67,12 @@ class PrettifyCodeSyntax {
 	  add_settings_field('pcs_style_style_field', __('Style', $this->plugin_id), array($this, 'style_style_field_content'), 'pcs_style', 'pcs_style_section');
 	}
 
-	public function settings_validate($input) {
-		// $options = get_option('prettify_code_syntax');
-		// $options['text_string'] = trim($input['text_string']);
-		// if(!preg_match('/^[a-z0-9]{3}$/i', $options['text_string'])) {
-		// $options['text_string'] = '';
-		// }
-		$options = $input;
-		// $options = '';
+	public function settings_validate($options) {
+		$file = dirname(__FILE__).'/stylesheets/custom.css';
+		$custom_css = file_get_contents($file);
+		if ($custom_css != $options['style_custom']) {
+			file_put_contents($file, $options['style_custom']);
+		}
 		return $options;
 	}
 
@@ -154,7 +152,7 @@ class PrettifyCodeSyntax {
 	    		wp_enqueue_style('prettify-sons-of-obsidian', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/stylesheets/sons-of-obsidian.css', 'prettify', false, 'all');
 	    	break;
 	    	case 'custom':
-	    		wp_enqueue_style('prettify-custom', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/stylesheets/custom.php', 'prettify', false, 'all');
+	    		wp_enqueue_style('prettify-custom', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/stylesheets/custom.css', 'prettify', false, 'all');
 	    	break;
 	    }
 
