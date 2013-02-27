@@ -1,5 +1,5 @@
 jQuery(function($) {
-	var tabs = $('#tabs');
+	var tabs = $('.plugin-tabs');
 	var panels = $('.content-tab', tabs);
 	panels.not('.content-tab-active').hide();
 	var links = $('.nav-tab', tabs);
