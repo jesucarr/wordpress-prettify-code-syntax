@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: syntax, highlighter, prettify, code, markup
 Requires at least: 3.0.1
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ The main reason for the development of this plugin was the lack of options suppo
 
 You can use the plugin like this:
 
-`<pre class="prettify"><code class="language-php">
+`<pre class="prettyprint"><code class="language-php">
 // my code
 </code></pre>`
 
@@ -24,9 +24,9 @@ Also very important is that although this plugin loads different files depending
 
 = Languages =
 
-This syntax highlighter is based on [Google Code Prettify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) and should work on a number of languages including **C** and friends, **Java**, **Python**, **Bash**, **SQL**, **HTML**, **XML**, **Javascript**, and **Makefiles**. It works passably on **Ruby**, **PHP**, **VB**, and **Awk** and a decent subset of **Perl** and **Ruby**, but, because of commenting conventions, doesn't work on Smalltalk, or CAML-like languages.
+This syntax highlighter is based on [Google Code Prettify](http://google-code-prettify.googlecode.com/svn/trunk/README.html) and should work on a number of languages including **C** and friends, **Java**, **Python**, **Bash**, **SQL**, **HTML**, **XML**, **Javascript**, **Makefiles**, and Rust. It works passably on **Ruby**, **PHP**, **VB**, and **Awk** and a decent subset of **Perl** and **Ruby**, but, because of commenting conventions, doesn't work on Smalltalk.
 
-Other languages are supported via an extension (plugin options):  **CSS**, **SQL**, **YAML**, **Visual Basic**, **Clojure**, **Scala**, **TeX**, **LaTeX**, **WikiText**, **Erlang**, **Go**, **Haskell**, **Lua**, **OCAML**, **SML**, **F#**, **Nemerle**, **Protocol Buffers**, **VHDL**, **XQuery**
+Other languages are supported via an extension (plugin options):  **CSS**, **SQL**, **YAML**, **Visual Basic**, **Clojure**, **Scala**, **Latek (TeX, LaTeX)**, **WikiText**, **Erlang**, **Go**, **Haskell**, **Lua**, **OCAML**, **SML**, **F#**, **Nemerle**, **Protocol Buffers**, **CHDL (VHDL)**, **XQ (XQuery)**, **Lisp, Scheme**, **Dart**, **Llvm**, **Mumps**, **Pascal**, **R, S**, **RD**, **TCL**
 
 = Styles =
 
@@ -42,7 +42,7 @@ If you have a style that would like to see included in the option list, just [co
 
 * If you don't care too much about the HTML5 recommendation, you can skip the `language-` class. The code always gets detected automatically.
 
-* It will also work if you only use a `pre` tag without the `code` tag (but long lines will be wrapped instead of get horizontal scroll), or if you only use a `code` tag with the `prettify` class (but if you don't use `pre` your spaces/returns won't be maintained.)
+* It will also work if you only use a `pre` tag without the `code` tag (but long lines will be wrapped instead of get horizontal scroll), or if you only use a `code` tag with the `prettyprint` class (but if you don't use `pre` your spaces/returns won't be maintained.)
 
 * Be careful using the Visual Editor tab when inserting code, as some HTML tags will be modified or removed.
 
@@ -78,6 +78,10 @@ Best thing with anything related to code would be to [fork me or open an issue](
 2. Style options
 
 == Changelog ==
+
+= 1.1 =
+* Add new languages
+* Several fixes and code refactoring
 
 = 1.0 =
 * First release

@@ -3,7 +3,7 @@
 Plugin Name: Prettify Code Syntax
 Plugin URI: http://www.frontendmatters.com/open-source/wordpress-plugins/prettify-code-syntax/
 Description: Code syntax highlighter using Google Prettify, supporting the HTML5 recommendation, and caching plugins.
-Version: 1.0.2
+Version: 1.1
 Author: Jesús Carrera
 Author URI: http://www.frontendmatters.com/
 License: GPL2 or later
@@ -32,6 +32,34 @@ class PrettifyCodeSyntax {
 		$this->plugin_id = 'prettify-code-syntax';
 		$this->plugin_url = plugins_url($this->plugin_id);
 		$this->options = get_option('prettify_code_syntax');
+		$this->language_modules = array(
+			'css' => 'CSS',
+			'sql' => 'SQL',
+			'yaml' => 'YAML', 
+			'vb' => 'Visual Basic', 
+			'clj' => 'Clojure', 
+			'scala' => 'Scala', 
+			'tex' => 'Latek (TeX, LaTeX)', 
+			'wiki' => 'WikiText', 
+			'erlang' => 'Erlang', 
+			'go' => 'Go', 
+			'hs' => 'Haskell', 
+			'lua' => 'Lua', 
+			'ml' => 'OCAML, SML, F#', 
+			'n' => 'Nemerle', 
+			'proto' => 'Protocol Buffers', 
+			'vhdl' => 'CHDL (VHDL)',
+			'xq' => 'XQ (XQuery)', 
+			'lisp' => 'Lisp, Scheme', 
+			'dart' => 'Dart', 
+			'llvm' => 'Llvm', 
+			'mumps' => 'Mumps', 
+			'pascal' => 'Pascal', 
+			'r' => 'R, S', 
+			'rd' => 'RD',
+			'tcl' => 'TCL',
+
+		);
 
   	add_action('admin_menu', array($this, 'menu'));
 		add_action('admin_init', array($this, 'register_settings'));
@@ -60,10 +88,10 @@ class PrettifyCodeSyntax {
 	public function register_settings() { // whitelist options
 	  register_setting('pcs_settings_group', 'prettify_code_syntax', array($this, 'settings_validate'));
 
-	  add_settings_section('pcs_languages_section', __('Languages', $this->plugin_id), array($this, 'languages_section_description'), 'pcs_languages');
+	  add_settings_section('pcs_languages_section', false, array($this, 'languages_section_description'), 'pcs_languages');
 	  add_settings_field('pcs_languages_extra_languages_field', __('Extra Languages', $this->plugin_id), array($this, 'languages_extra_languages_field_content'), 'pcs_languages', 'pcs_languages_section');
 
-	  add_settings_section('pcs_style_section', __('Style', $this->plugin_id), array($this, 'style_section_description'), 'pcs_style');
+	  add_settings_section('pcs_style_section', false, array($this, 'style_section_description'), 'pcs_style');
 	  add_settings_field('pcs_style_style_field', __('Style', $this->plugin_id), array($this, 'style_style_field_content'), 'pcs_style', 'pcs_style_section');
 	}
 
@@ -80,59 +108,10 @@ class PrettifyCodeSyntax {
 
     wp_enqueue_script('prettify', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/prettify.js', false, false, true);
 
-    if (!empty($this->options['languages_css'])) {
-    	wp_enqueue_script('prettify-css', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-css.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_sql'])) {
-    	wp_enqueue_script('prettify-sql', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-sql.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_yaml'])) {
-    	wp_enqueue_script('prettify-yaml', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-yaml.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_visual_basic'])) {
-    	wp_enqueue_script('prettify-visual-basic', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-vb.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_clojure'])) {
-    	wp_enqueue_script('prettify-clojure', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-clj.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_scala'])) {
-    	wp_enqueue_script('prettify-scala', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-scala.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_tex'])) {
-    	wp_enqueue_script('prettify-tex', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-tex.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_wikitext'])) {
-    	wp_enqueue_script('prettify-wikitext', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-wiki.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_erlang'])) {
-    	wp_enqueue_script('prettify-erlang', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-erlang.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_go'])) {
-    	wp_enqueue_script('prettify-go', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-go.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_haskell'])) {
-    	wp_enqueue_script('prettify-haskell', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-hs.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_lua'])) {
-    	wp_enqueue_script('prettify-lua', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-lua.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_ocaml'])) {
-    	wp_enqueue_script('prettify-ocaml', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-ml.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_nemerle'])) {
-    	wp_enqueue_script('prettify-nemerle', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-n.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_protocol_buffers'])) {
-    	wp_enqueue_script('prettify-protocol-buffers', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-proto.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_vhdl'])) {
-    	wp_enqueue_script('prettify-vhdl', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-vhdl.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_protocol_buffers'])) {
-    	wp_enqueue_script('prettify-protocol_buffers', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-proto.js', array('prettify'), false, true);
-    }
-    if (!empty($this->options['languages_xquery'])) {
-    	wp_enqueue_script('prettify-xquery', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-xq.js', array('prettify'), false, true);
+    foreach ($this->language_modules as $language => $name) {
+    	if (!empty($language)) {
+	    	wp_enqueue_script('prettify-'.$language, WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/lang-'.$language.'.js', array('prettify'), false, true);
+	    }
     }
 
     wp_enqueue_script('prettify-load', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)).'/javascripts/load.js', array('prettify'), false, true);
