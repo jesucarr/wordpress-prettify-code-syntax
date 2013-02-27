@@ -3,7 +3,7 @@
 	<h2><?php _e('Prettify Code Syntax', $this->plugin_id) ?></h2>
 	<form method="post" action="options.php"> 
 		<?php settings_fields( 'pcs_settings_group' ); ?>
-		<div id="tabs">
+		<div class="plugin-tabs">
 			<h2 class="nav-tab-wrapper">
 				<a class="nav-tab nav-tab-active" href="#pcs-section-languages"><?php _e('Languages', $this->plugin_id) ?></a>
 				<a class="nav-tab" href="#pcs-section-style"><?php _e('Style', $this->plugin_id) ?></a>
