@@ -7,7 +7,7 @@ pre.prettyprint code,
 .post-content pre.prettyprint code,
 .comment-content pre.prettyprint,
 .comment-content code.prettyprint,
-.comment-content pre.prettyprint code { display: block; background-color: #333 }
+.comment-content pre.prettyprint code { display: block; background-color: #333; }
 .prettyprint .nocode { background-color: none; color: #000 }
 .prettyprint .str { color: #ffa0a0 } /* string  - pink */
 .prettyprint .kwd { color: #f0e68c; font-weight: bold }
@@ -21,8 +21,21 @@ pre.prettyprint code,
 .prettyprint .atv { color: #ffa0a0 } /* attribute value - pink */
 .prettyprint .dec { color: #98fb98 } /* decimal         - lightgreen */
 
+.comment-content pre.prettyprint code,
+.post-content pre.prettyprint code,
+pre.prettyprint code { padding: 0; margin: 0; border: none; display: block; white-space: pre;}
+
+pre.prettyprint, 
+code.prettyprint, 
+.post-content pre.prettyprint,
+.post-content code.prettyprint,
+.comment-content pre.prettyprint,
+.comment-content code.prettyprint { overflow: auto; word-wrap: normal; -moz-tab-size: 2; -o-tab-size: 2; tab-size: 2;}
+
+.prettyprint li, .prettyprint ol { margin: 0; padding: 0; }
+
 /* Specify class=linenums on a pre to get line numbering */
-.prettyprint ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+.prettyprint ol.linenums { padding-left: 3em; color: #AEAEAE } /* IE indents via margin-left */
 .prettyprint li.L0,
 .prettyprint li.L1,
 .prettyprint li.L2,
