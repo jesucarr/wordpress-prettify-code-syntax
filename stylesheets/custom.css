@@ -1,78 +1,31 @@
-/* Based on Vim sunburst theme by David Leibovic */
+.com { color: #93a1a1; }
 
-.prettyprint .str { color: #65B043; } /* string  - green */
-.prettyprint .kwd { color: #E28964; } /* keyword - dark pink */
-.prettyprint .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
-.prettyprint .typ { color: #89bdff; } /* type - light blue */
-.prettyprint .lit { color: #3387CC; } /* literal - blue */
-.prettyprint .pun { color: #fff; } /* punctuation - white */
-.prettyprint .pln { color: #fff; } /* plaintext - white */
-.prettyprint .tag { color: #89bdff; } /* html/xml tag    - light blue */
-.prettyprint .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
-.prettyprint .atv { color: #65B042; } /* html/xml attribute value - green */
-.prettyprint .dec { color: #3387CC; } /* decimal - blue */
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .linenums .tag { color: #1e347b; }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: #48484c; }
 
-pre.prettyprint, 
-code.prettyprint, 
-pre.prettyprint code,
-.post-content pre.prettyprint,
-.post-content code.prettyprint,
-.post-content pre.prettyprint code,
-.comment-content pre.prettyprint,
-.comment-content code.prettyprint,
-.comment-content pre.prettyprint code  {
-	background-color: #000;
+.prettyprint {
+  padding: 8px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
 }
-pre.prettyprint, 
-code.prettyprint, 
-.post-content pre.prettyprint,
-.post-content code.prettyprint,
-.comment-content pre.prettyprint,
-.comment-content code.prettyprint {
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-o-border-radius: 8px;
-	-ms-border-radius: 8px;
-	-khtml-border-radius: 8px;
-	border-radius: 8px;
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+     -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+          box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
 }
-
-
-pre.prettyprint {
-	width: 95%;
-	margin: 1em auto;
-	padding: 1em;
-	white-space: pre-wrap;
-}
-
 
 /* Specify class=linenums on a pre to get line numbering */
-.prettyprint ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
-.prettyprint li.L0,
-.prettyprint li.L1,
-.prettyprint li.L2,
-.prettyprint li.L3,
-.prettyprint li.L5,
-.prettyprint li.L6,
-.prettyprint li.L7,
-.prettyprint li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-.prettyprint li.L1,
-.prettyprint li.L3,
-.prettyprint li.L5,
-.prettyprint li.L7,
-.prettyprint li.L9 { }
-
-@media print {
-  .prettyprint .str { color: #060; }
-  .prettyprint .kwd { color: #006; font-weight: bold; }
-  .prettyprint .com { color: #600; font-style: italic; }
-  .prettyprint .typ { color: #404; font-weight: bold; }
-  .prettyprint .lit { color: #044; }
-  .prettyprint .pun { color: #440; }
-  .prettyprint .pln { color: #000; }
-  .prettyprint .tag { color: #006; font-weight: bold; }
-  .prettyprint .atn { color: #404; }
-  .prettyprint .atv { color: #060; }
-}
-															
+ol.linenums {
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+} 
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 18px;
+  text-shadow: 0 1px 0 #fff;
+}																																																																																															

@@ -11,13 +11,22 @@
 .prettyprint .atn { color: #E0E2E4;}
 .prettyprint .atv { color: #EC7600;}
 .prettyprint .dec { color: purple;}
+
+code.prettyprint { display: block; }        
+
+.comment-content pre.prettyprint code,
+.post-content pre.prettyprint code,
+pre.prettyprint code { padding: 0; margin: 0; border: none; display: block; white-space: pre;}
+
+.prettyprint li, .prettyprint ol { margin: 0; padding: 0; }
+
 pre.prettyprint, 
 code.prettyprint, 
 .post-content pre.prettyprint,
 .post-content code.prettyprint,
 .comment-content pre.prettyprint,
-.comment-content code.prettyprint { border: 0px solid #888;}
-.prettyprint ol.linenums { margin-top: 0; margin-bottom: 0;}
+.comment-content code.prettyprint { border: 0px solid #888; overflow: auto; word-wrap: normal; -moz-tab-size: 2; -o-tab-size: 2; tab-size: 2;}
+.prettyprint ol.linenums { margin-top: 0; margin-bottom: 0; padding-left: 3em;}
 
 pre.prettyprint, 
 code.prettyprint, 
@@ -27,7 +36,7 @@ pre.prettyprint code,
 .post-content pre.prettyprint code,
 .comment-content pre.prettyprint,
 .comment-content code.prettyprint,
-.comment-content pre.prettyprint code { background: #000;}
+.comment-content pre.prettyprint code { background: #000; }
 
 .prettyprint li.L0, 
 .prettyprint li.L1, 
