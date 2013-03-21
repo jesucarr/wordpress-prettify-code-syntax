@@ -3,7 +3,7 @@
 Plugin Name: Prettify Code Syntax
 Plugin URI: http://www.frontendmatters.com/open-source/wordpress-plugins/prettify-code-syntax/
 Description: Code syntax highlighter using Google Prettify, supporting the HTML5 recommendation, and caching plugins.
-Version: 1.2
+Version: 1.2.1
 Author: Jesús Carrera
 Author URI: http://www.frontendmatters.com/
 License: GPL2 or later
@@ -164,7 +164,9 @@ class PrettifyCodeSyntax {
 		}
 
  		
- 		$parsed_code = htmlentities($code);
+ 		$parsed_code = htmlspecialchars($code, ENT_NOQUOTES, get_bloginfo('charset'), true);
+
+		$parsed_code = str_replace('&amp;#038;', '&amp;', $parsed_code);
 		return $tags_open.$parsed_code.$tags_close;
 	}
 
@@ -174,8 +176,9 @@ class PrettifyCodeSyntax {
 		$code = $matches[2];
 		$tags_close = $matches[3];
 
-		$parsed_code = htmlentities($code);
-		return $tags_open.$parsed_code.$tags_close;
+		$parsed_code = htmlspecialchars($code, ENT_NOQUOTES, get_bloginfo('charset'), true);
+		$parsed_code = str_replace('&amp;#038;', '&amp;', $parsed_code);
+		return $tags_open.$parsed_code2.$tags_close;
 	}
 
 	public function load_admin_scripts() {
